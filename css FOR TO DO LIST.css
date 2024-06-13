@@ -1,0 +1,282 @@
+ :root{
+    --gradient: linear-gradient(
+        180deg,
+        rgba(45, 122, 1253, 0.73) 0%,
+        red 100%
+    );
+    --dark: #001747;
+    --grey: #b1bacb;
+    --grey-border: rgba(210, 210, 210,0.75);
+    --grey-light: #eeeeee;
+    --grey-dark: $405175;
+    --blue: #2d70fd;
+    --green: #00d8a7;
+    --white: #ffffff;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    background: url(to\ od1.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn{
+    color: var(--white);
+    font-size: 1.3rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.3rem;
+    transform: translateX(0px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    background-image: linear-gradient(45deg, rgb(10, 238, 2), #0614b7);
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    cursor: pointer;
+    shape-outside: margin-box(50%);
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+h1, h2, h3, h4, h5, h6, 
+p{
+    margin: 0;
+}
+
+/* Container */
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2rem;
+    background:  var(--white);
+    padding: 5rem;
+    height: 50%;
+    width: 60%;
+    box-shadow: 0 1rem 3rem 1rem rgba(8, 71, 0, 0.15);
+    max-width: 30rem;
+}
+
+h1{
+    text-transform: uppercase;
+    height: 3rem;
+    color: var(--dark);
+    text-align: center;
+}
+
+.input{
+    position: relative;
+    display: flex;
+}
+
+
+.inputFild {
+    width: calc(100%); /* Adjust the width to leave space for the button */
+    border: 0.06rem solid gray;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    font-size: 1rem;
+    overflow-wrap: bre; /* Allow text to wrap downwards */
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+textarea {
+    width: calc(80% - 30px); /* Adjust the width to leave space for the button */
+    border: 0.06rem solid gray;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    font-size: 1rem;
+    resize: vertical; /* Allow vertical resizing */
+    overflow-y: scroll; /* Add vertical scrollbar if needed */
+    overflow-wrap: break-word; /* Allow text to 
+    wrap downwards */
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+
+input[type="text"]::placeholder{
+    color: var(--grey);
+}
+
+.todo-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+
+ul{
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.3rem;
+}
+
+#todoList p {
+    display: flex;
+    gap: 1rem;
+    color: var(--dark);
+    align-items: center;
+  }
+
+  #todoList .disabled {
+    color: red;
+    cursor: pointer;
+  }
+
+
+
+.disabled{
+    display:flex;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+}
+
+input[type="checkbox"]::before{
+    content: "\2713";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    border: 0.06rem solid var(--grey-border);
+    border-radius: 50%;
+    color: transparent;
+}
+
+input[type="checkbox"]:checked::before{
+    color: var(--white);
+    background-color: var(--green);
+    border: 0.06rem solid var(--green);
+    border-radius: 50%;
+}
+
+.counter{
+    border: 0.06rem solid gray;
+}
+
+.counter-con{
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--grey);
+}
+
+.counter-con p {
+    align-self: center;
+    color: #001747;
+    cursor: default;
+}
+
+.counter-con button{
+    border: none;
+    background-color: transparent;
+    color: #001747;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.counter-con button:hover{
+    border: none;
+    background-color: transparent;
+    color: red;
+}
+
+.timestamp{
+    margin-top: 11px; 
+}
+
+.footer{
+    display: flex;
+    gap: 1.8rem;
+    background-color: var(--white);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.scr{
+    height: 15rem;
+    scrollbar-width: thin;
+}
+
+.scr::-webkit-scrollbar-thumb{
+    width: 0.6rem;
+}
+
+.scr::-webkit-scrollbar-thumb{
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+}
+
+.scr::-webkit-scrollbar-track{
+    display: none;
+}
+
+textarea {
+    width: 100%;
+    border: 0.06rem solid gray;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    font-size: 1rem;
+    resize: vertical; /* Allow vertical resizing */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+textarea:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: var(--blue); /* Add custom border color on focus */
+}
+
+
+/* Default styles */
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+}
+
+/* Styles for medium screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust styles for medium screens */
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 1025px) {
+    /* Adjust styles for larger screens */
+}
