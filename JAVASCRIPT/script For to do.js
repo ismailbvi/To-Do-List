@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
     displayTasks();
 });
 
+function autoResizeTextarea() {
+    todoInput.style.height = 'auto';
+    todoInput.style.height = todoInput.scrollHeight + 'px';
+}
+
 function addTask() {
     const newTask = todoInput.value.trim();
     if (newTask !== "") {
@@ -46,18 +51,18 @@ function deleteAllTasks() {
 
     // If there are unchecked tasks, show an alert message
     if (uncheckedTasks) {
-        // Increment the alertSkips counter
+       
         alertSkips++;
 
         // If alert is skipped twice, delete all tasks
         if (alertSkips === 2) {
             alertSkips = 0; // Reset the counter
             deleteAllTasksConfirmed(); // Call the function to delete all tasks
-            return; // Exit the function
+            return; 
         }
 
         alert("Please check all tasks before deleting!");
-        return; // Exit the function
+        return; 
     }
 
     // If all tasks are checked, proceed to delete all tasks
@@ -103,7 +108,7 @@ function displayTasks() {
 
         const timestamp = document.createElement("span");
         timestamp.classList.add("timestamp");
-        timestamp.textContent = item.timestamp || ""; // Display timestamp if available
+        timestamp.textContent = item.timestamp || ""; 
 
         todoContainer.appendChild(checkbox);
         todoContainer.appendChild(todoText);

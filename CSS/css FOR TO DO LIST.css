@@ -1,3 +1,4 @@
+
  :root{
     --gradient: linear-gradient(
         180deg,
@@ -16,7 +17,7 @@
 body{
     margin: 0;
     height: 100vh;
-    background: url(to\ od1.avif);
+    background-image: url(PIC/to\ od1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex; 
@@ -24,6 +25,9 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+/* Button animetion*/
 
 .btn{
     color: var(--white);
@@ -54,7 +58,23 @@ body{
       background-position: 0% 50%;
     }
   }
+
+  .delete-btn{
+    color: var(--white);
+    padding: 0.2rem 0.4rem 0.1rem;
+    border-radius: 0.3rem;
+    transform: translateX(0px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    background-image: linear-gradient(45deg, rgb(236, 23, 23), #0614b7);
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+    border: none;
+    cursor: pointer;
+    margin: 11px;
+    
+  }
   
+/* Button animetion*/
 
 h1, h2, h3, h4, h5, h6, 
 p{
@@ -90,30 +110,35 @@ h1{
 
 
 .inputFild {
-    width: calc(100%); /* Adjust the width to leave space for the button */
+    width: calc(100%); 
     border: 0.06rem solid gray;
     border-radius: 0.5rem;
     padding: 1.3rem;
     font-size: 1rem;
-    overflow-wrap: bre; /* Allow text to wrap downwards */
+    box-sizing: border-box;
+    resize: none; /* Prevent manual resizing */
+    overflow-wrap: break-word; /
+}
+
+textarea {
+    width: calc(80% - 30px); 
+    border: 0.06rem solid gray;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    font-size: 1rem;
+    resize: vertical; 
+    overflow-y: scroll; 
+    overflow-wrap: break-word; 
     word-break: break-all;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
 
-textarea {
-    width: calc(80% - 30px); /* Adjust the width to leave space for the button */
-    border: 0.06rem solid gray;
-    border-radius: 0.5rem;
-    padding: 1.3rem;
-    font-size: 1rem;
-    resize: vertical; /* Allow vertical resizing */
-    overflow-y: scroll; /* Add vertical scrollbar if needed */
-    overflow-wrap: break-word; /* Allow text to 
-    wrap downwards */
-    word-break: break-all;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+
+
+textarea:focus {
+    outline: none; 
+   padding: 10px 10px 10px;
 }
 
 
@@ -151,8 +176,6 @@ li{
     color: red;
     cursor: pointer;
   }
-
-
 
 .disabled{
     display:flex;
@@ -253,14 +276,14 @@ textarea {
     border-radius: 0.5rem;
     padding: 1.3rem;
     font-size: 1rem;
-    resize: vertical; /* Allow vertical resizing */
-    overflow-y: auto; /* Add vertical scrollbar if needed */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    resize: vertical; 
+    overflow-y: auto; 
+    box-sizing: border-box; 
 }
 
 textarea:focus {
-    outline: none; /* Remove default focus outline */
-    border-color: var(--blue); /* Add custom border color on focus */
+    outline: none; 
+    border-color: var(--blue); 
 }
 
 
